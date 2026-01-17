@@ -99,7 +99,7 @@ class EnvVar(str, Enum):
 
 
 # General
-VERSION = "0.1.33"
+VERSION = "0.1.33.1.11"
 DEFAULT_GUID = "00000000-0000-0000-0000-000000000000"
 DEFAULT_API_ROOT_URL = os.environ.get(EnvVar.DEFAULT_API_ROOT_URL.value, "https://api.powerbi.com")
 FABRIC_API_ROOT_URL = os.environ.get(EnvVar.FABRIC_API_ROOT_URL.value, "https://api.fabric.microsoft.com")
