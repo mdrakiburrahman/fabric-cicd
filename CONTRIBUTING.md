@@ -89,6 +89,21 @@ Before you begin, ensure you have the following installed:
     uv run ruff check
     ```
 
+### Private build
+
+```bash
+echo "Enter your Azure DevOps PAT:"
+read -s AZURE_DEVOPS_PAT
+echo ""
+
+rm -rf $(git rev-parse --show-toplevel)/dist && \
+uv build && \
+uv publish \
+  --publish-url https://msdata.pkgs.visualstudio.com/Tina/_packaging/monitoring/pypi/upload/ \
+  --username msdata \
+  --password "$AZURE_DEVOPS_PAT"
+```
+
 ## Contribution process
 
 To avoid cases where submitted PRs are rejected, please follow the following steps:
